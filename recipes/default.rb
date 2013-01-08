@@ -44,7 +44,7 @@ end
 
 # Clone the custom dotfiles
 git "/etc/skel/dotfiles" do
-  repository node['dofiles']['custom']
+  repository node['dotfiles']['custom']
   reference "master"
   user "root"
   group "root"

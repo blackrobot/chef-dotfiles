@@ -40,6 +40,7 @@ execute "rake" do
   user "root"
   group "root"
   action :run
+  environment({ 'HOME' => "/etc/skel" })
 end
 
 # Clone the custom dotfiles

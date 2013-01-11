@@ -6,8 +6,8 @@
 include_recipe "git"
 
 # The packages to install with apt-get
-pkgs = ["vim", "mercurial", "subversion", "git-core", "ruby-dev", "rake",
-        "exuberant-ctags", "ack-grep", "xclip", "curl"]
+pkgs = %w{ vim mercurial subversion git-core ruby-dev rake
+           exuberant-ctags ack-grep xclip curl }
 
 # Install the packages
 pkgs.each do |pkg|
@@ -58,7 +58,7 @@ file "/etc/skel/.bashrc" do
   action :delete
 end
 
-[".bashrc", ".gitconfig", ".janus", ".vimrc.before", ".vimrc.after"].each do |lnk|
+%w{ .bashrc .gitconfig .janus .vimrc.before .vimrc.after }.each do |lnk|
   link "/etc/skel/#{lnk}" do
     to "/etc/skel/dotfiles/#{lnk}"
     owner "root"

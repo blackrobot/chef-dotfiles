@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: bashrc
+# Cookbook Name:: dotfiles
 # Attributes:: default
 #
-# Copyright 2011, Fletcher Nichol
+# Copyright 2013, Damon Jablons
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,3 +19,7 @@
 
 default['dotfiles']['vim'] = "git://github.com/carlhuda/janus.git"
 default['dotfiles']['custom'] = "git://github.com/blackrobot/dotfiles.git"
+default['dotfiles']['links'] = [
+  ".bashrc", ".gitconfig", ".janus",
+  ".vimrc.before", ".vimrc.after"
+]

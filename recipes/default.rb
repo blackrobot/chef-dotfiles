@@ -62,7 +62,7 @@ unless ::File.exists?(tmp_file)
   end
 
   # Clone the custom dotfiles
-  git "/etc/skel/dotfiles" do
+  git "/etc/skel/.dotfiles" do
     repository node['dotfiles']['custom']
     reference "master"
     user "root"
@@ -79,7 +79,7 @@ unless ::File.exists?(tmp_file)
 
     # Create the symlink
     link "/etc/skel/#{lnk}" do
-      to "/etc/skel/dotfiles/#{lnk}"
+      to "/etc/skel/.dotfiles/#{lnk}"
       owner "root"
       group "root"
     end

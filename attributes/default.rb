@@ -20,6 +20,12 @@
 default['dotfiles']['vim'] = "git://github.com/carlhuda/janus.git"
 default['dotfiles']['custom'] = "git://github.com/blackrobot/dotfiles.git"
 default['dotfiles']['links'] = [
-  ".bashrc", ".gitconfig", ".janus",
-  ".vimrc.before", ".vimrc.after"
+  # Vim
+  ".vimrc.before", ".vimrc.after", ".janus",
+
+  # Tmux
+  ".tmux.conf", ".tmux-powerlinerc",
+
+  # Bash
+  ".bashrc"
 ]

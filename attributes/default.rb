@@ -17,15 +17,16 @@
 # limitations under the License.
 #
 
-default['dotfiles']['vim'] = "git://github.com/carlhuda/janus.git"
+default['dotfiles']['janus'] = "git://github.com/carlhuda/janus.git"
+default['dotfiles']['oh-my-zsh'] = "git://github.com/robbyrussell/oh-my-zsh.git"
 default['dotfiles']['custom'] = "git://github.com/blackrobot/dotfiles.git"
 default['dotfiles']['links'] = [
   # Vim
   ".vimrc.before", ".vimrc.after", ".janus",
 
   # Tmux
-  ".tmux.conf", ".tmux-powerlinerc",
+  ".tmux.conf",
 
-  # Bash
-  ".bashrc"
+  # ZSH
+  ".zshrc"
 ]

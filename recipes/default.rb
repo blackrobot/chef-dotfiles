@@ -20,8 +20,8 @@
 include_recipe "git"
 
 # The packages to install with apt-get
-pkgs = %w{ vim mercurial subversion git-core ruby-dev rake
-           exuberant-ctags ack-grep xclip curl }
+pkgs = ["vim", "mercurial", "subversion", "git-core", "ruby-dev", "rake",
+        "exuberant-ctags", "ack-grep", "curl", "zsh"]
 
 # Install the packages
 pkgs.each do |pkg|
@@ -44,7 +44,7 @@ end
 unless ::File.exists?(tmp_file)
   # Clone janus
   git "/etc/skel/.vim" do
-    repository node['dotfiles']['vim']
+    repository node['dotfiles']['janus']
     reference "master"
     user "root"
     group "root"
@@ -59,6 +59,15 @@ unless ::File.exists?(tmp_file)
     group "root"
     action :run
     environment({ 'HOME' => "/etc/skel" })
+  end
+
+  # Clone oh-my-zsh
+  git "/etc/skel/.oh-my-zsh" do
+    repository node['dotfiles']['oh-my-zsh']
+    reference "master"
+    user "root"
+    group "root"
+    action :sync
   end
 
   # Clone the custom dotfiles
